@@ -269,6 +269,12 @@ window.klarnaAsyncCallback = function () {
                 delete $kpRadio.active;
                 $('.kp-method').hide(600);
             });
+            
+            // react to aggrosoft paypal plus changes
+            $('body').on('ppplus-payment-selected', function() {
+               delete $kpRadio.active;
+               $('.kp-method').hide(600);
+            });
 
             // order step4 click
             $('#orderStep').attr('href', 'javascript:document.getElementById("paymentNextStepBottom").click();');
